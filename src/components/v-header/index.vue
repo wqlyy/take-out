@@ -33,17 +33,17 @@
 </template>
 
 <script>
-  import SupportIco from 'components/support-ico';
+  import SupportIco from 'components/support-ico'
 
   export default {
-    name:"V-Header",
-    components:{
+    name: 'V-Header',
+    components: {
       SupportIco
     },
     props: {
       seller: {
         type: Object,
-        default(){
+        default() {
           return {}
         }
       }
@@ -51,23 +51,20 @@
     data() {
       return {
         detailShow: false
-      };
+      }
     },
     methods: {
       showDetail() {
-        this.detailShow = true;
+        this.detailShow = true
       },
       hideDetail() {
-        this.detailShow = false;
+        this.detailShow = false
       }
     },
     created() {
-      this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
-    },
-    components: {
-      star
+      this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
     }
-  };
+  }
 </script>
 
 <style lang="stylus">
@@ -98,7 +95,7 @@
           .brand
             width: 30px
             height: 18px
-            bg-image('brand')
+            bg-image('images/brand')
             background-size: 30px 18px
             background-repeat: no-repeat
           .name
@@ -150,7 +147,7 @@
         width: 22px
         height: 12px
         margin-right:4px
-        bg-image('bulletin')
+        bg-image('images/bulletin')
         background-size: 22px 12px
         background-repeat: no-repeat
       .bulletin-text
