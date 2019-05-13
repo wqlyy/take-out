@@ -34,7 +34,7 @@
 
 <script>
   import SupportIco from 'components/support-ico'
-
+  import Request from '../../utils/Request'
   export default {
     name: 'V-Header',
     components: {
@@ -59,7 +59,13 @@
       },
       hideDetail() {
         this.detailShow = false
+      },
+      getHeader() {
+        Request.get('123')
       }
+    },
+    mounted() {
+      this.getHeader()
     },
     created() {
       this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
