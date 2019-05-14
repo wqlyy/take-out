@@ -2,14 +2,17 @@
   <div id="app">
    <v-header :seller="seller"/>
    <div class="tab-wrapper">
-     <tab/>
+     <tab :tabs="tabs"/>
    </div>
   </div>
 </template>
 
 <script>
 import VHeader from './components/v-header'
-import Tab from 'components/tab'
+import Tab from './components/tab'
+import Goods from './components/goods'
+import Ratings from './components/ratings'
+import Seller from './components/seller'
 import { getSeller } from './api'
 
 export default {
@@ -21,6 +24,31 @@ export default {
   data() {
     return {
       seller:{}
+    }
+  },
+  computed: {
+    tabs() {
+      return [
+        {
+          label:"商品",
+          component:Goods,
+          data:{
+            seller:this.seller
+          }
+        },{
+          label:"评价",
+          component:Ratings,
+          data:{
+            seller:this.seller
+          }
+        },{
+          label:"商家",
+          component:Seller,
+          data:{
+            seller:this.seller
+          }
+        }
+      ]
     }
   },
   mounted() {
