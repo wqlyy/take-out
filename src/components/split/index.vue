@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="split">
 
   </div>
 </template>
@@ -12,5 +12,9 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
+.split{
+  padding-top: 15px;
+  background-color: #e1e1e1
+}
 </style>

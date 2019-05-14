@@ -14,7 +14,7 @@ import Goods from './components/goods'
 import Ratings from './components/ratings'
 import Seller from './components/seller'
 import { getSeller } from './api'
-
+import qs from 'query-string'
 export default {
   name: 'app',
   components: {
@@ -23,8 +23,16 @@ export default {
   },
   data() {
     return {
-      seller:{}
+      seller:{
+        id:qs.parse(location.search).id
+      }
     }
+  },
+  watch: {
+    seller(){
+console.log(location.search)
+    }
+    
   },
   computed: {
     tabs() {
@@ -54,7 +62,9 @@ export default {
   },
   methods: {
      _getHeader() {
-        getSeller().then(res => {
+        getSeller({
+          id:this.seller.id
+        }).then(res => {
           this.seller = res.result
           console.log(res)
         }).catch(err => {

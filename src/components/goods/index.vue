@@ -142,7 +142,9 @@ export default {
   },
   methods: {
     fetch() {
-      getGoods().then(res=>{
+      getGoods({
+        id:this.seller.id
+      }).then(res=>{
         this.goods = res.result
       })
     },
