@@ -1,14 +1,14 @@
 import Axios from 'axios'
 
-const service = Axios.create({})
-
+const service = Axios.create({
+  baseURL: 'take/api'
+})
+const ERR_OK = 0;
 service.interceptors.request.use((config) => {
-  console.log(config)
   return config
 })
 
 service.interceptors.response.use((response) => {
-  console.log(response)
   return response
 })
 
