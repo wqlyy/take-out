@@ -2,7 +2,7 @@
   <div id="app">
    <v-header :seller="seller"/>
    <div class="tab-wrapper">
-     <tab :tabs="tabs"/>
+     <tab :tabs="tabs" />
    </div>
   </div>
 </template>
@@ -28,8 +28,7 @@ export default {
   },
   computed: {
     tabs() {
-      return [
-        {
+      return [{
           label:"商品",
           component:Goods,
           data:{
@@ -47,8 +46,7 @@ export default {
           data:{
             seller:this.seller
           }
-        }
-      ]
+        }]
     }
   },
   mounted() {
