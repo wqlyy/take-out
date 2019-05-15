@@ -95,12 +95,12 @@
       data: Object,
       default () {
         return {}
-      },
+      }
     },
     components: {
       Split,
       Star,
-      SupportIco,
+      SupportIco
     },
     computed: {
       seller () {
@@ -108,20 +108,20 @@
       },
       favoriteText () {
         return this.favorite ? '已收藏' : '收藏'
-      },
+      }
     },
     data () {
       return {
         favorite: false,
         sellerScrollOptions: {
           directionLockThreshold: 0,
-          click: false,
+          click: false
         },
         picScrollOptions: {
           scrollX: true,
           stopPropagation: true,
-          directionLockThreshold: 0,
-        },
+          directionLockThreshold: 0
+        }
       }
     },
     created () {
@@ -131,8 +131,8 @@
       toggleFavorite () {
         this.favorite = !this.favorite
         saveToLocal(this.seller.id, 'favorite', this.favorite)
-      },
-    },
+      }
+    }
   }
 </script>
 

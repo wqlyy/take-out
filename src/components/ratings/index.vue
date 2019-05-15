@@ -79,7 +79,7 @@
   import Split from 'components/split'
   import RatingMixin from '../../utils/mixins/rating'
   import moment from 'moment'
-  import {getRatings} from '../../api'
+  import { getRatings } from '../../api'
   export default {
     name: 'ratings',
     mixins: [RatingMixin],
@@ -87,25 +87,25 @@
       data: Object,
       default () {
         return {}
-      },
+      }
     },
     components: {
       Star,
       RatingSelect,
-      Split,
+      Split
     },
     computed: {
       seller () {
         return this.data.seller || {}
-      },
+      }
     },
     data () {
       return {
         ratings: [],
         scrollOptions: {
           click: false,
-          directionLockThreshold: 0,
-        },
+          directionLockThreshold: 0
+        }
       }
     },
     methods: {
@@ -114,7 +114,7 @@
         if (!this.fetched) {
           this.fetched = true
           let params = {
-            id: this.seller.id,
+            id: this.seller.id
           }
           getRatings(params).then((res) => {
             this.ratings = res.result
@@ -123,15 +123,15 @@
       },
       format (time) {
         return moment(time).format('YYYY-MM-DD hh:mm')
-      },
+      }
     },
     watch: {
       selectType () {
         this.$nextTick(() => {
           this.$refs.scroll.refresh()
         })
-      },
-    },
+      }
+    }
   }
 </script>
 <style lang="stylus" scoped>

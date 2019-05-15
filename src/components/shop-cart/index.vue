@@ -44,7 +44,7 @@
   function createBalls () {
     let balls = []
     for (let i = 0; i < BALL_LEN; i++) {
-      balls.push({show: false})
+      balls.push({ show: false })
     }
     return balls
   }
@@ -55,27 +55,27 @@
         type: Array,
         default () {
           return []
-        },
+        }
       },
       deliveryPrice: {
         type: Number,
-        default: 0,
+        default: 0
       },
       minPrice: {
         type: Number,
-        default: 0,
+        default: 0
       },
       fold: {
         type: Boolean,
-        default: true,
+        default: true
       },
       sticky: {
         type: Boolean,
-        default: false,
-      },
+        default: false
+      }
     },
     components: {
-      Bubble,
+      Bubble
     },
     computed: {
       totalPrice () {
@@ -108,12 +108,12 @@
         } else {
           return 'enough'
         }
-      },
+      }
     },
     data () {
       return {
         balls: createBalls(),
-        listFold: this.fold,
+        listFold: this.fold
       }
     },
     created () {
@@ -125,7 +125,7 @@
         if (this.totalPrice < this.minPrice) return
         this.$createDialog({
           title: '支付',
-          content: `您需要支付${this.totalPrice}元`,
+          content: `您需要支付${this.totalPrice}元`
         }).show()
         e.stopPropagation()
       },
@@ -180,7 +180,7 @@
       _showShopCartList () {
         this.shopCartListComp = this.shopCartListComp || this.$createShopCartList({
           $props: {
-            selectFoods: 'selectFoods',
+            selectFoods: 'selectFoods'
           },
           $events: {
             leave: () => {
@@ -192,8 +192,8 @@
             add: (el) => {
               // 购物车列表小球滚动
               this.shopCartStickyComp.drop(el)
-            },
-          },
+            }
+          }
         })
         this.shopCartListComp.show()
       },
@@ -209,14 +209,14 @@
             deliveryPrice: 'deliveryPrice',
             minPrice: 'minPrice',
             fold: 'listFold',
-            list: this.shopCartListComp,
-          },
+            list: this.shopCartListComp
+          }
         })
         this.shopCartStickyComp.show()
       },
       _hideShopCartSticky () {
         this.shopCartStickyComp.hide()
-      },
+      }
     },
     watch: {
       fold (newVal) {
@@ -227,8 +227,8 @@
         if (!this.fold && count === 0) {
           this._hideShopCartList()
         }
-      },
-    },
+      }
+    }
   }
 </script>
 

@@ -19,8 +19,8 @@
         type: Object,
         default () {
           return {}
-        },
-      },
+        }
+      }
     },
     methods: {
       add (event) {
@@ -36,7 +36,7 @@
         if (this.food.count) {
           this.food.count--
         }
-      },
+      }
     }
   }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class="tab">
-    <cube-tab-bar 
+    <cube-tab-bar
       :showSlider="true"
       :useTransition="false"
       v-model="selectedLabel"
@@ -27,8 +27,6 @@
   </div>
 </template>
 <script>
-
-
 export default {
   name: 'Tab',
   props: {
@@ -46,7 +44,7 @@ export default {
   data() {
     return {
       index: this.initialIndex,
-      slideOptions:{
+      slideOptions: {
         listenScroll: true,
         probeType: 3,
         directionLockThreshold: 0
@@ -59,7 +57,7 @@ export default {
         return this.tabs[this.index].label
       },
       set(newVal) {
-        this.index = this.tabs.findIndex(value=>value.label===newVal)
+        this.index = this.tabs.findIndex(value => value.label === newVal)
       }
     }
   },
@@ -70,7 +68,7 @@ export default {
     onChange(current) {
       this.index = current
       const component = this.$refs.component[current]
-      component.fetch&&component.fetch()
+      component.fetch && component.fetch()
     },
     onScroll(pos) {
       const tabBarWidth = this.$refs.tabBar.$el.clientWidth

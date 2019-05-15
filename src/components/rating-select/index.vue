@@ -25,15 +25,15 @@
         type: Array,
         default () {
           return []
-        },
+        }
       },
       selectType: {
         type: Number,
-        default: ALL,
+        default: ALL
       },
       onlyContent: {
         type: Boolean,
-        default: false,
+        default: false
       },
       desc: {
         type: Object,
@@ -41,10 +41,10 @@
           return {
             all: '全部',
             positive: '满意',
-            negative: '不满意',
+            negative: '不满意'
           }
-        },
-      },
+        }
+      }
     },
     computed: {
       positives () {
@@ -56,7 +56,7 @@
         return this.ratings.filter((rating) => {
           return rating.rateType === NEGATIVE
         })
-      },
+      }
     },
     methods: {
       select (type) {
@@ -64,8 +64,8 @@
       },
       toggleContent () {
         this.$emit(EVENT_TOGGLE)
-      },
-    },
+      }
+    }
   }
 </script>
 <style lang="stylus" scoped>

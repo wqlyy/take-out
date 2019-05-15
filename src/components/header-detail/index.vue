@@ -38,7 +38,7 @@
 import Star from '../star'
 import SupportIco from '../support-ico'
 export default {
-  name: "header-detail",
+  name: 'header-detail',
   props: {
     seller: {
       type: Object,

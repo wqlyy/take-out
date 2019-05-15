@@ -23,36 +23,30 @@ export default {
   },
   data() {
     return {
-      seller:{
-        id:qs.parse(location.search).id
+      seller: {
+        id: qs.parse(location.search).id
       }
     }
-  },
-  watch: {
-    seller(){
-console.log(location.search)
-    }
-    
   },
   computed: {
     tabs() {
       return [{
-          label:"商品",
-          component:Goods,
-          data:{
-            seller:this.seller
+          label: '商品',
+          component: Goods,
+          data: {
+            seller: this.seller
           }
-        },{
-          label:"评价",
-          component:Ratings,
-          data:{
-            seller:this.seller
+        }, {
+          label: '评价',
+          component: Ratings,
+          data: {
+            seller: this.seller
           }
-        },{
-          label:"商家",
-          component:Seller,
-          data:{
-            seller:this.seller
+        }, {
+          label: '商家',
+          component: Seller,
+          data: {
+            seller: this.seller
           }
         }]
     }
@@ -63,7 +57,7 @@ console.log(location.search)
   methods: {
      _getHeader() {
         getSeller({
-          id:this.seller.id
+          id: this.seller.id
         }).then(res => {
           this.seller = res.result
           console.log(res)

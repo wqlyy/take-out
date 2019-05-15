@@ -4,7 +4,7 @@ export default {
   data () {
     return {
       selectType: ALL,
-      onlyContent: true,
+      onlyContent: true
     }
   },
   computed: {
@@ -17,7 +17,7 @@ export default {
         }
       })
       return ret
-    },
+    }
   },
   methods: {
     onSelect (type) {
@@ -25,6 +25,6 @@ export default {
     },
     onToggle () {
       this.onlyContent = !this.onlyContent
-    },
-  },
+    }
+  }
 }

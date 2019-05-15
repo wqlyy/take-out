@@ -77,7 +77,7 @@
 </template>
 
 <script>
-import {getGoods} from '../../api'
+import { getGoods } from '../../api'
 import ShopCart from '../shop-cart'
 import CartControl from '../cart-control'
 import SupportIco from '../support-ico'
@@ -113,10 +113,10 @@ export default {
       return this.data.seller
     },
     selectFoods() {
-      let ret = [];
+      let ret = []
       this.goods.forEach(good => {
         good.foods.forEach(food => {
-          if(food.count) {
+          if (food.count) {
             ret.push(food)
           }
         })
@@ -126,8 +126,8 @@ export default {
     barTxts() {
       const ret = []
       this.goods.forEach(good => {
-        const {type, name, foods} = good;
-        let count = 0;
+        const { type, name, foods } = good
+        let count = 0
         foods.forEach(food => {
           count += food.count || 0
         })
@@ -143,8 +143,8 @@ export default {
   methods: {
     fetch() {
       getGoods({
-        id:this.seller.id
-      }).then(res=>{
+        id: this.seller.id
+      }).then(res => {
         this.goods = res.result
       })
     },
@@ -160,7 +160,7 @@ export default {
     _showFood () {
       this.foodComp = this.foodComp || this.$createFood({
         $props: {
-          food: 'selectedFood',
+          food: 'selectedFood'
         },
         $events: {
           add: (target) => {
@@ -168,8 +168,8 @@ export default {
           },
           leave: () => {
             this._hideShopCartSticky()
-          },
-        },
+          }
+        }
       })
       this.foodComp.show()
     },
@@ -180,14 +180,14 @@ export default {
           selectFoods: 'selectFoods',
           deliveryPrice: this.seller.deliveryPrice,
           minPrice: this.seller.minPrice,
-          fold: true,
-        },
+          fold: true
+        }
       })
       this.shopCartStickyComp.show()
     },
     _hideShopCartSticky () {
       this.shopCartStickyComp.hide()
-    },
+    }
   }
 }
 </script>

@@ -34,7 +34,6 @@
 
 <script>
   import SupportIco from 'components/support-ico'
-  
   export default {
     name: 'V-Header',
     components: {

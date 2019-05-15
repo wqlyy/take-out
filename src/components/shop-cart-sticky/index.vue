@@ -18,39 +18,39 @@
     name: 'shop-cart-sticky',
     mixins: [popupMixin],
     components: {
-      ShopCart,
+      ShopCart
     },
     props: {
       selectFoods: {
         type: Array,
         default () {
           return []
-        },
+        }
       },
       deliveryPrice: {
         type: Number,
-        default: 0,
+        default: 0
       },
       minPrice: {
         type: Number,
-        default: 0,
+        default: 0
       },
       fold: {
         type: Boolean,
-        default: true,
+        default: true
       },
       list: {
         type: Object,
         default () {
           return {}
-        },
-      },
+        }
+      }
     },
     methods: {
       drop (el) {
         this.$refs.shopCart.drop(el)
-      },
-    },
+      }
+    }
   }
 </script>
 <style lang="stylus" scoped>

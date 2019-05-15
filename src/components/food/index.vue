@@ -94,26 +94,26 @@
         type: Object,
         default () {
           return {}
-        },
-      },
+        }
+      }
     },
     components: {
       CartControl,
       RatingSelect,
-      Split,
+      Split
     },
     computed: {
       ratings () {
         return this.food.ratings
-      },
+      }
     },
     data () {
       return {
         desc: {
           all: '全部',
           positive: '推荐',
-          negative: '吐槽',
-        },
+          negative: '吐槽'
+        }
       }
     },
     created () {
@@ -136,8 +136,8 @@
       },
       format (time) {
         return moment(time).format('YYYY-MM-DD hh:mm')
-      },
-    },
+      }
+    }
   }
 </script>
 <style lang="stylus" scoped>
